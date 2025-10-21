@@ -1,103 +1,62 @@
-import Image from "next/image";
+import { Inter } from 'next/font/google'
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+})
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="h-screen">
+      <section className="relative grid grid-cols-2 h-full">
+        
+        {/* Columna izquierda */}
+        <div className={`${inter.variable} font-sans flex flex-col justify-center px-12`}>
+          <h1 className="text-6xl font-semibold mb-6 text-black">
+            PARTICIPA ACTIVAMENTE EN LA DECISIÓN.
+          </h1>
+          <h2 className="text-2xl font-semibold mb-4 text-black">
+            Tu voto refleja tu visión: Derecha o Izquierda, ¡exprésate con libertad!
+          </h2>
+          <p className="text-lg text-black">
+            Cada decisión cuenta y cada opinión aporta. Este es tu espacio para compartir lo que piensas,
+            ser parte del diálogo y vivir la experiencia de participar activamente.
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+        {/* Columna derecha con collage */}
+        <div className="relative flex items-center justify-center overflow-hidden">
+          {/* Imagen principal */}
+          <img
+            src="https://www.agenciapi.co/sites/default/files/2023-10/elecciones-colombia-2023-portada.jpg"
+            alt="Imagen principal"
+            className="w-4/5 rounded-xl shadow-xl object-cover relative z-10"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+
+          {/* Imagen superior derecha (cubre esquina superior) */}
+          <img
+            src="https://tse3.mm.bing.net/th/id/OIP.XTjSt9T0G7XZFFQJYPdzxAHaFD?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="Imagen superior"
+            className="absolute top-[10%] right-[15%] w-1/3 rounded-lg shadow-lg object-cover z-20"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+
+          {/* Imagen inferior derecha (cubre esquina inferior) */}
+          <img
+            src="https://tse1.mm.bing.net/th/id/OIP.D3BcQVYbb0JSl5wCLVu2ugHaEw?cb=12ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"
+            alt="Imagen inferior"
+            className="absolute bottom-[10%] right-[15%] w-1/3 rounded-lg shadow-lg object-cover z-20"
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        </div>
+
+        {/* Botón centrado horizontalmente, en la parte inferior (80% vh) */}
+        <div className="absolute w-full flex justify-center" style={{ top: '80vh' }}>
+          <button className="bg-black text-white text-2xl font-bold px-16 py-6 rounded-full shadow-lg hover:bg-gray-800 transition-all">
+            Votar
+          </button>
+        </div>
+      </section>
+    </main>
+  )
 }
